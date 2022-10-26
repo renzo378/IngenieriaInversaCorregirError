@@ -1,0 +1,33 @@
+delimiters "$","$"
+import "clases.stg"
+traducir(paquetes) ::= <<
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramaClasesCompleto:DiagramaClases
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diagramaClasesCompleto="http://www.example.org/diagramaClasesCompleto"
+    xsi:schemaLocation="http://www.example.org/diagramaClasesCompleto diagramaClasesCompleto.ecore">
+$paquetes:paquetesContenidos()$<artefacto_contenido/>
+</diagramaClasesCompleto:DiagramaClases>
+>>
+
+paquetesContenidos(paquete) ::= <<
+  <packages_contenidos
+      nombre="$paquete.nombre$">
+      $paquete.clasesContenidas:clasesContenidas()$
+      $paquete.interfaces:interfacesContenidas()$
+  </packages_contenidos>$\n$ $\n$
+>>
+
+
+
+
+interfacesContenidas(interface) ::= <<
+    <clasificadores_contenidos
+        xsi:type="diagramaClasesCompleto:Interface"
+        nombre="$interface.nombre$">
+$interface.constantesList:atributosContenidos()$
+$interface.operacionesList:metodosContenidos()$
+    </clasificadores_contenidos>$\n$
+>>

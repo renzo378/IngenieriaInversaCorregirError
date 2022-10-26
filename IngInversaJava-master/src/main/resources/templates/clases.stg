@@ -1,0 +1,17 @@
+
+delimiters "$","$"
+import "atributos.stg"
+import "metodos.stg"
+clasesContenidas(clase) ::= <<
+    <clasificadores_contenidos
+        xsi:type="diagramaClasesCompleto:Clase"
+        nombre="$clase.nombre$"
+        $if(clase.esAbstracta)$esAbstracta="$clase.esAbstracta$"
+        $endif$
+        $if(clase.esAuditable)$esAuditable="$clase.esAuditable$"
+        $endif$
+        >
+        $clase.atributos:atributosContenidos()$
+        $clase.metodos:metodosContenidos()$
+    </clasificadores_contenidos>$\n$
+>>

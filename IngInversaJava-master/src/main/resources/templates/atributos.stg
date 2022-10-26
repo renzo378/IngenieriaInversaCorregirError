@@ -1,0 +1,10 @@
+
+delimiters "$","$"
+atributosContenidos(atributo) ::= <<
+ <atributos_contenidos
+          nombre="$atributo.nombre$"
+          visibilidad="$atributo.modificador.visibilidad$"
+          tipo="$atributo.tipo$"
+          pseudonimo="$atributo.nombre$"/>
+
+>>

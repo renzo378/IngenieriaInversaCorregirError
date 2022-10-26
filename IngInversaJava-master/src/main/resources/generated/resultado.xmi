@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diagramaClasesCompleto:DiagramaClases
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:diagramaClasesCompleto="http://www.example.org/diagramaClasesCompleto"
+    xsi:schemaLocation="http://www.example.org/diagramaClasesCompleto diagramaClasesCompleto.ecore">
+  <packages_contenidos
+      nombre="Entidades">
+          <clasificadores_contenidos
+              xsi:type="diagramaClasesCompleto:Clase"
+              nombre="persona"
+              esAbstracta="True"
+              esAuditable="True"
+              >
+               <operaciones_contenidas
+                        nombre="caminar"
+                        visibilidad="public"
+                        tipoRetorno = "void"
+                        parametros ="int pasosDate hora"
+                       >
+                     <endpoint 
+               nombrePublicado="endPointcaminar"/>
+                    </operaciones_contenidas>
+
+          </clasificadores_contenidos>
+          <clasificadores_contenidos
+              xsi:type="diagramaClasesCompleto:Clase"
+              nombre="domicilio"
+              esAbstracta="True"
+              esAuditable="False"
+              >
+          </clasificadores_contenidos>
+          <clasificadores_contenidos
+              xsi:type="diagramaClasesCompleto:Clase"
+              nombre="animal"
+              esAbstracta="False"
+              esAuditable="False"
+              >
+          </clasificadores_contenidos>
+
+  </packages_contenidos>
+ 
+  <packages_contenidos
+      nombre="Controllers">
+  </packages_contenidos>
+ 
+<artefacto_contenido/>
+</diagramaClasesCompleto:DiagramaClases>

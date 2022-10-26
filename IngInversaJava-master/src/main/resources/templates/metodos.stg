@@ -1,0 +1,15 @@
+metodosContenidos(metodo) ::= <<
+ <operaciones_contenidas
+          nombre="$metodo.nombre$"
+          visibilidad="$metodo.modificador.visibilidad$"
+          tipoRetorno = "$metodo.tipoRetorno$"
+          $if(metodo.esAbstracto)$esAbstracto="$metodo.esAbstracto$"
+          $endif$
+          parametros ="$metodo.parametros$"
+         >
+       <endpoint $\n$ nombrePublicado="endPoint$metodo.nombre$"/>
+      </operaciones_contenidas>$\n$
+>>
+
+
+
